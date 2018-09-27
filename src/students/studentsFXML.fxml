@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="students.StudentsController">
+   <children>
+      <HBox layoutY="-8.0" prefHeight="732.0" prefWidth="1286.0">
+         <children>
+            <TabPane prefHeight="732.0" prefWidth="1284.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="COURSES">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="741.0" prefWidth="1284.0">
+                           <children>
+                              <TableView fx:id="coursetable" layoutX="188.0" layoutY="-2.0" prefHeight="700.0" prefWidth="1094.0">
+                                <columns>
+                                  <TableColumn fx:id="cidcolumn" prefWidth="237.0" text="CID" />
+                                  <TableColumn fx:id="cnamecolumn" prefWidth="359.0" text="CNAME" />
+                                    <TableColumn fx:id="didcolumn" prefWidth="191.0" text="DID" />
+                                    <TableColumn fx:id="sidcolumn" prefWidth="277.0" text="SID" />
+                                    <TableColumn fx:id="fidcolumn" prefWidth="217.0" text="FID" />
+                                </columns>
+                              </TableView>
+                              <VBox layoutY="-1.0" prefHeight="700.0" prefWidth="188.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="198.0" text="                 LOAD COURSES" />
+                                    <Button mnemonicParsing="false" onAction="#loadCoursedetails" prefHeight="25.0" prefWidth="206.0" text="Click Here!">
+                                       <VBox.margin>
+                                          <Insets left="50.0" right="50.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="FACULTY">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="facultytable" layoutX="164.0" prefHeight="698.0" prefWidth="1120.0">
+                                <columns>
+                                  <TableColumn fx:id="fnamecolumn" prefWidth="125.0" text="FNAME" />
+                                  <TableColumn fx:id="gendercolumn" prefWidth="167.0" text="GENDER" />
+                                    <TableColumn fx:id="Fidcolumn" prefWidth="149.0" text="FID" />
+                                    <TableColumn fx:id="salarycolumn" prefWidth="199.0" text="SALARY" />
+                                    <TableColumn fx:id="Cidcolumn" prefWidth="147.0" text="CID" />
+                                    <TableColumn fx:id="agecolumn" prefWidth="147.0" text="AGE" />
+                                    <TableColumn fx:id="dobcolumn" prefWidth="185.0" text="DOB" />
+                                </columns>
+                              </TableView>
+                              <VBox prefHeight="700.0" prefWidth="164.0">
+                                 <children>
+                                    <Label prefHeight="39.0" prefWidth="180.0" text="          FACULTY DETAILS" />
+                                    <Button mnemonicParsing="false" onAction="#loadFacultydetails" prefHeight="25.0" prefWidth="182.0" text="Click Here!">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
