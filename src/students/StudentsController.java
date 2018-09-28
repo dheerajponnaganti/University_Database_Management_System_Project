@@ -34,23 +34,18 @@ public class StudentsController implements Initializable {
     private TableView<facultydetails> facultytable;
     @FXML
     private TableColumn<facultydetails, String> fnamecolumn;
-    @FXML
-    private TableColumn<facultydetails, String> gendercolumn;
+
     @FXML
     private TableColumn<facultydetails, String> Fidcolumn;
-    @FXML
-    private TableColumn<facultydetails, String> salarycolumn;
+
     @FXML
     private TableColumn<facultydetails, String> Cidcolumn;
-    @FXML
-    private TableColumn<facultydetails, String> agecolumn;
-    @FXML
-    private TableColumn<facultydetails, String> dobcolumn;
+
     private dbConnection dc;
     private ObservableList<coursedetails> data;
     private String sql = "SELECT * FROM COURSE";
     private ObservableList<facultydetails> Data;
-    private String Sql = "SELECT * FROM FACULTY";
+    private String Sql = "select  FID, FNAME,CID from FACULTY";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -88,19 +83,18 @@ public class StudentsController implements Initializable {
             this.Data = FXCollections.observableArrayList();
             ResultSet rs = conn.createStatement().executeQuery(Sql);
             while (rs.next()) {
-                this.Data.add(new facultydetails(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6),rs.getString(7)));
+                this.Data.add(new facultydetails(rs.getString(2), rs.getString(1), rs.getString(3)));
 
             }
         } catch (SQLException e) {
             System.err.println("error: " + e);
         }
         this.fnamecolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("fname"));
-        this.gendercolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("gender"));
+
         this.Fidcolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("fid"));
-        this.salarycolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("salary"));
+
         this.Cidcolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("cid"));
-        this.agecolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("age"));
-        this.dobcolumn.setCellValueFactory(new PropertyValueFactory<facultydetails, String>("dob"));
+
         this.facultytable.setItems(null);
         this.facultytable.setItems(this.Data);
     }

@@ -50,13 +50,9 @@
                            <children>
                               <TableView fx:id="facultytable" layoutX="164.0" prefHeight="698.0" prefWidth="1120.0">
                                 <columns>
-                                  <TableColumn fx:id="fnamecolumn" prefWidth="125.0" text="FNAME" />
-                                  <TableColumn fx:id="gendercolumn" prefWidth="167.0" text="GENDER" />
-                                    <TableColumn fx:id="Fidcolumn" prefWidth="149.0" text="FID" />
-                                    <TableColumn fx:id="salarycolumn" prefWidth="199.0" text="SALARY" />
-                                    <TableColumn fx:id="Cidcolumn" prefWidth="147.0" text="CID" />
-                                    <TableColumn fx:id="agecolumn" prefWidth="147.0" text="AGE" />
-                                    <TableColumn fx:id="dobcolumn" prefWidth="185.0" text="DOB" />
+                                  <TableColumn fx:id="fnamecolumn" prefWidth="295.0" text="FNAME" />
+                                    <TableColumn fx:id="Fidcolumn" prefWidth="459.0" text="FID" />
+                                    <TableColumn fx:id="Cidcolumn" minWidth="0.0" prefWidth="357.0" text="CID" />
                                 </columns>
                               </TableView>
                               <VBox prefHeight="700.0" prefWidth="164.0">
